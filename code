@@ -62,29 +62,45 @@ vendingmachinebase()
 while cash>=cost1 or cash>=cost3 or cash>=cost5 or cash>=cost7 or cash>=cost9:
     user=int(input("You look and see the menu: 1-Bread(2AED): 2-Water(2AED): 3-Chocolate(3AED): 4-Hot Drink(3AED): 5-Chips(4AED): 6-Tea(4AED): 7-Sandwich(5AED): 8-Soda(5AED): 9-Energy Drinks(6AED). The vending machine requires a number:\n"))
     vendingmachine(user)
-    if user==1: 
+    #if the user entered 1
+    if user==1:
+    #checks if the stock left is greater than 1 and if the cash can cover the cost
         if stock1>=1 and cash>=cost1:
-            stock1=stock1-1 
+            #reduces stock by 1
+            stock1=stock1-1
+            #reduces cash by the cost
             cash=cash-cost1 
+            #output that you have bought the item along with money and stock left.
             print("You bought bread for",cost1,"AED. You have",cash,"left. There's",stock1," bread left.")
+            #adds item to inventory
             inventory.append("bread")
+            #checks if stock is greater than 1 and if the cash can cover cost.
             if stock2>=1 and cash>=cost2:
+                #vending machine suggesting another item
                 print("This pairs well with water for",cost2,"AED.")
+                #prompts if the user wants to buy or not.
                 user2=input("Would you like to buy water? (y/n)") 
+                #answer is yes
                 if user2=='y':
                     cash=cash-cost2
                     stock2=stock2-1
                     print(f"You bought water for {cost2} AED. You have {cash} left. The amount of stock remaining is: {stock2}.")
                     inventory.append("water")
+                    #prompts if the user wants to leave
                     user3=input("Would you like to leave? (yes/no)")
+                    #answered yes to leaving
                     if user3=='yes':
                         break
+                    #answered no to leaving
                     elif user3=='no':
                         continue
+                #answer is no
                 elif user2=='n':
                     continue
+            #if the suggested item ran out of stocks or user cannot afford it.
             else:
                 continue
+        #if the first item you're trying to buy has no more stocks or user cannot afford it
         else:
             print("Cannot purchase item")
             continue
