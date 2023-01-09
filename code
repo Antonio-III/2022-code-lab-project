@@ -311,4 +311,10 @@ while cash>=cost1 or cash>=cost3 or cash>=cost5 or cash>=cost7 or cash>=cost9:
     else:
         print("Invalid number.")
         continue
-print("You left with",cash,"AED in your pockets. And the items you bought:",inventory)
+items=len(invetory)
+if item==0:
+    print("You left with",cash,"AED in your pockets. You didn't buy anything.")
+elif item==1:
+    print("You left with",cash,"AED in your pockets. And the item you bought is:",inventory)
+else:
+    print("You left with",cash,"AED in your pockets. And the items you bought are:",inventory)
