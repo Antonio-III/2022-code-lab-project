@@ -60,7 +60,7 @@ cost1,cost2,cost3,cost4,cost5,cost6,cost7,cost8,cost9,cost10=2,2,3,3,4,4,5,5,6,6
 vendingmachinebase()
 #if the cash entered can afford the cheapest item
 while cash>=cost1 or cash>=cost3 or cash>=cost5 or cash>=cost7 or cash>=cost9:
-    user=int(input("You look and see the menu: 1-Bread(2AED): 2-Water(2AED): 3-Chocolate(3AED): 4-Hot Drink(3AED): 5-Chips(4AED): 6-Tea(4AED): 7-Sandwich(5AED): 8-Soda(5AED): 9-Energy Drinks(6AED). The vending machine requires a number:\n"))
+    user=int(input("You look and see the menu: 1-Bread(2AED): 2-Water(2AED): 3-Chocolate(3AED): 4-Hot Drink(3AED): 5-Chips(4AED): 6-Tea(4AED): 7-Sandwich(5AED): 8-Soda(5AED): 9-Energy Drinks(6AED): 0-Exit. The vending machine requires a number:\n"))
     vendingmachine(user)
     #if the user entered 1
     if user==1:
@@ -306,6 +306,8 @@ while cash>=cost1 or cash>=cost3 or cash>=cost5 or cash>=cost7 or cash>=cost9:
         else:
             print("Cannot purchase item.")
             continue
+    elif user==0:
+        break
     else:
         print("Invalid number.")
         continue
